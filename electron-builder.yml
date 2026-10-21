@@ -1,0 +1,18 @@
+appId: com.example.minesweeper
+productName: 扫雷Minesweeper
+extraMetadata:
+  main: minesweeper/main.js
+files:
+  - minesweeper/main.js
+  - minesweeper/index.html
+  - minesweeper/style.css
+  - minesweeper/game.js
+directories:
+  output: dist-minesweeper
+win:
+  target: nsis
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true

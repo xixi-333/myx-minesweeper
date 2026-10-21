@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #1a2a1a 0%, #05100a 100%);
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #fff;
+}
+
+#game-wrap {
+  text-align: center;
+  padding: 16px;
+}
+
+h1 {
+  color: #7fff9f;
+  letter-spacing: 4px;
+  margin: 0 0 12px;
+  text-shadow: 0 0 12px rgba(127, 255, 159, 0.5);
+}
+
+#difficulty-bar {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.diff-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  background: #24382a;
+  color: #cfe;
+  border: 2px solid #3c5c46;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+
+.diff-btn:hover {
+  background: #35543f;
+  transform: translateY(-1px);
+}
+
+.diff-btn.active {
+  background: #4caf50;
+  color: #06170a;
+  border-color: #7fff9f;
+}
+
+#panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 320px;
+  margin: 0 auto 10px;
+  background: #1c1c1c;
+  border: 3px solid #444;
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.counter {
+  font-family: "Consolas", monospace;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ff3b3b;
+  background: #000;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 2px;
+  min-width: 64px;
+}
+
+#reset-btn {
+  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 2px solid #666;
+  background: #ddd;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+#reset-btn:active {
+  transform: scale(0.92);
+}
+
+#board-wrap {
+  position: relative;
+  display: inline-block;
+  box-shadow: 0 0 24px rgba(76, 175, 80, 0.35);
+  border-radius: 6px;
+}
+
+#board {
+  display: grid;
+  background: #3c5c46;
+  border: 4px solid #2a3d2f;
+  border-radius: 4px;
+  padding: 4px;
+  gap: 1px;
+}
+
+.cell {
+  width: 26px;
+  height: 26px;
+  background: #a8d5a8;
+  border: 2px outset #d4f0d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Consolas", monospace;
+  cursor: pointer;
+}
+
+.cell.revealed {
+  background: #e8f5e8;
+  border: 1px solid #b8d8b8;
+  cursor: default;
+}
+
+.cell.mine {
+  background: #ff5c5c;
+}
+
+.cell.mine-hit {
+  background: #ff0000;
+}
+
+.cell.flag {
+  background: #a8d5a8;
+}
+
+.cell[data-n="1"] { color: #1565c0; }
+.cell[data-n="2"] { color: #2e7d32; }
+.cell[data-n="3"] { color: #c62828; }
+.cell[data-n="4"] { color: #6a1b9a; }
+.cell[data-n="5"] { color: #8d4c1a; }
+.cell[data-n="6"] { color: #00838f; }
+.cell[data-n="7"] { color: #212121; }
+.cell[data-n="8"] { color: #616161; }
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  gap: 14px;
+}
+
+#overlay.hidden {
+  display: none;
+}
+
+#overlay-title {
+  font-size: 28px;
+  color: #7fff9f;
+  font-weight: bold;
+}
+
+#overlay-msg {
+  font-size: 15px;
+  color: #ddd;
+}
+
+#overlay-btn {
+  padding: 10px 26px;
+  font-size: 16px;
+  background: #4caf50;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #06170a;
+  transition: transform 0.15s ease;
+}
+
+#overlay-btn:hover {
+  transform: scale(1.06);
+}
+
+#hint {
+  color: #999;
+  font-size: 13px;
+  margin-top: 10px;
+  max-width: 420px;
+}

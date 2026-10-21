@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>扫雷 Minesweeper</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-wrap">
+    <h1>扫雷 MINESWEEPER</h1>
+
+    <div id="difficulty-bar">
+      <button class="diff-btn" data-diff="beginner">初级 9×9 / 10雷</button>
+      <button class="diff-btn" data-diff="intermediate">中级 16×16 / 40雷</button>
+      <button class="diff-btn" data-diff="expert">高级 30×16 / 99雷</button>
+    </div>
+
+    <div id="panel">
+      <div id="mine-counter" class="counter">010</div>
+      <button id="reset-btn" title="重新开始">🙂</button>
+      <div id="timer" class="counter">000</div>
+    </div>
+
+    <div id="board-wrap">
+      <div id="board"></div>
+      <div id="overlay" class="hidden">
+        <div id="overlay-title">游戏结束</div>
+        <div id="overlay-msg"></div>
+        <button id="overlay-btn">再来一局</button>
+      </div>
+    </div>
+
+    <p id="hint">左键翻开格子，右键插旗标记地雷；双击已翻开的数字可展开周围格子（旗数量匹配时）。</p>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
